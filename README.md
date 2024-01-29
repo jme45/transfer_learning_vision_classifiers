@@ -3,7 +3,7 @@
 
 
 ## Installation
-pip install git+https://github.com/jme45/transfer_learning_vision_classifiers.git
+pip install transfer_learning_vision_classifiers
 
 ## Usage example
 ```python
