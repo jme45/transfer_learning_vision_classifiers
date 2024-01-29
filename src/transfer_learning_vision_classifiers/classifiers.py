@@ -127,27 +127,6 @@ class TransferLearningVisionClassifier:
         # Obtain model and set weights.
         self._get_model_and_transform()
 
-        # # If we train on the FGVCAircraft dataset, we need to implement cropping, same for prediction.
-        # # If we do prediction on a new picture, crop shouldn't be done.
-        # # Only the training gets the data augmentation transforms.
-        # self.train_transform_with_crop = transf_v2.Compose(
-        #     [
-        #         parameters.TO_TENSOR_TRANSFORMS,
-        #         parameters.CropAuthorshipInformation(),
-        #         data_augmentation_transforms,
-        #         self.transforms,
-        #     ]
-        # )
-        # self.predict_transform_with_crop = transf_v2.Compose(
-        #     [
-        #         parameters.TO_TENSOR_TRANSFORMS,
-        #         parameters.CropAuthorshipInformation(),
-        #         self.transforms,
-        #     ]
-        # )
-        # self.predict_transform_without_crop = transf_v2.Compose(
-        #     [parameters.TO_TENSOR_TRANSFORMS, self.transforms]
-        # )
         # Define the default transform for prediction. In some cases additional
         # transforms are needed, e.g. when cropping is needed.
         self.default_predict_transform = transf_v2.Compose(
